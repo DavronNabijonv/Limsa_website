@@ -22,3 +22,5 @@ i18n
         ru:{translation:ruWords},
     }
 })
+
+export default i18n;
