@@ -2,3 +2,14 @@
     nega-biz-card-color: #6c2dba ;
     nega-biz-bg-color: #161616 ;
 */
+
+.container{
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+@media(max-width:1200px){
+  .container{
+    padding: 0 10px;
+  }
+}
