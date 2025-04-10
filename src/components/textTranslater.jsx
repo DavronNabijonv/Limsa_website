@@ -4,6 +4,6 @@ import { useTranslation } from 'react-i18next'
 export default function TextTranslater({txt}) {
     const {t} = useTranslation();
   return (
-    <div className='text-white' >{t(txt)}</div>
+    <div >{t(txt)}</div>
   )
 }
