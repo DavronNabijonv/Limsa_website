@@ -9,7 +9,7 @@ import Btn from "../../components/btn";
 import { useTranslation } from "react-i18next";
 
 export default function Navbar() {
-  const [scrollY_Screen, setScrollY_Screen] = useState(true);
+  const [scrollY_Screen, setScrollY_Screen] = useState(false);
   // hide and show of togle button
   const [togle, setTogle] = useState(false);
 
@@ -33,9 +33,9 @@ export default function Navbar() {
 
   return (
     <div
-      className={`navbar ${
-        scrollY_Screen ? "bg-[#161616]" : "backdrop-blur-sm"
-      }  border-b-2 border-gray-400`}
+      className={`navbar fixed z-[1000] w-[100%] top-0 ${
+        scrollY_Screen ? "backdrop-blur-sm" : "bg-[#161616]"
+      }  border-b-1 border-gray-400`}
     >
       <div className="container text-white flex lg:justify-around justify-between items-center gap-[10px]  ">
         <div className="logo  ">

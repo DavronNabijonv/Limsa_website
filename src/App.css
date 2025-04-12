@@ -11,7 +11,15 @@
   margin: 0 auto;
   padding: 10px  0 ;
 }
-@media(max-width:1200px){
+
+/* home page background image */
+.homepage{
+  background-image: url(./assets/main_bg.jpg);
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: cover;
+}
+@media(max-width:1400px){
   .container{
     padding: 10px 20px ;
   }
