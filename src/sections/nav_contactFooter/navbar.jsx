@@ -10,6 +10,8 @@ import { useTranslation } from "react-i18next";
 
 export default function Navbar() {
   const [scrollY_Screen, setScrollY_Screen] = useState(true);
+  // hide and show of togle button
+  const [togle, setTogle] = useState(false);
 
   // useCallback must be here, not inside useEffect
   const scrollYScreen = useCallback(() => {
@@ -24,42 +26,86 @@ export default function Navbar() {
     };
   }, [scrollYScreen]);
 
+  // change togle navbar for phone type
+  const changeTogler = () => {
+    setTogle(!togle);
+  };
+
   return (
     <div
       className={`navbar ${
         scrollY_Screen ? "bg-[#161616]" : "backdrop-blur-sm"
       }  border-b-2 border-gray-400`}
     >
-      <div className="container text-white flex justify-around items-center  ">
+      <div className="container text-white flex lg:justify-around justify-between items-center gap-[10px]  ">
         <div className="logo  ">
           <img
             src={logo}
             loading="lazy"
             alt="logo image"
-            className=" w-[120px] "
+            className=" lg:w-[200px] w-[180px] "
           />
         </div>
 
-        <div className="links max-w-[800px] w-[100%] flex justify-start items-center gap-[20px] ">
+        <div className=" links max-w-[800px] w-[100%] lg:flex hidden justify-start items-center gap-[20px] ">
           <LinksGroup />
         </div>
 
-        <div className="phoneNumber-btn py-[10px] px-[20px] ">
+        <div className=" lg:inline hidden phoneNumber-btn py-[10px] px-[20px] ">
           <Btn
             txt="+998 (33) 258 73 58"
-            btn_styles=" px-[25px] py-[8px] text-[14px] rounded-[25px] "
+            btn_styles=" py-[8px] text-[14px] rounded-[25px] w-[180px] "
             id_name="navbar-btn"
           />
         </div>
+
+        {/* style navbar for phone */}
+        <div className={`lg:hidden flex flex-col gap-[15px] absolute duration-[0.4s] ${togle?"transform translate-x-[0%] z-[22222] ":"transform translate-x-[100%]"} top-[66px] bg-[#161616] right-0 w-[60%] p-[15px] `}>
+          <LinksGroup close_func={()=>{setTogle(false)}} />
+        </div>
+
+        <div
+          className={"lg:hidden inline right-0 w-[2rem]  "}
+          onClick={changeTogler}
+        >
+          <div
+            className={` ${
+              togle
+                ? " transform -rotate-[45deg] -translate-x-[10px] translate-y-[5px] "
+                : "  "
+            } m-[0.5rem] w-[1.5rem] h-[0.12rem] bg-[#6c2dba] duration-[0.4s]`}
+          ></div>
+          <div
+            className={` ${
+              togle ? "opacity-[0]" : "opacity-[1]"
+            } m-[0.5rem] w-[0.8rem] h-[0.12rem] bg-[#6c2dba] duration-[0.4s]`}
+          ></div>
+          <div
+            className={` ${
+              togle
+                ? "transform rotate-[45deg] -translate-x-[10px] -translate-y-[15px]"
+                : ""
+            } m-[0.5rem] w-[1.5rem] h-[0.12rem] bg-[#6c2dba] duration-[0.4s]`}
+          ></div>
+        </div>
+
       </div>
+
+      {/* overflow */}
+      <div
+        className={`absolute ${
+          togle ? "flex" : "hidden"
+        } w-[100%] h-[100%] top-0 bottom-0 left-0 `}
+        onClick={() => setTogle(false)}
+      ></div>
+      {/* overflow */}
+
     </div>
   );
 }
 
-
-function LinksGroup() {
-
-  // active links 
+function LinksGroup({ close_func }) {
+  // active links
   const [activeLink, setActiveLink] = useState({
     home: true,
     service: false,
@@ -79,17 +125,20 @@ function LinksGroup() {
   };
 
   // change language
-  const {i18n} = useTranslation();
-  const handleChange = () =>{}
+  const { i18n } = useTranslation();
+  const handleChange = () => {};
 
   return (
     <>
       <Link
         to="/"
-        onClick={() => handleLinkClick("home")}
-        className={`text-[16px] py-[4px] px-[10px] ${
+        onClick={() => {
+          close_func();
+          handleLinkClick("home");
+        }}
+        className={`text-[16px] py-[4px] px-[10px]  ${
           activeLink.home
-            ? "rounded-[25px] border-b-[2px] border-[#6c2dba]"
+            ? "rounded-[25px] border-b-[2px] max-w-[120px] border-[#6c2dba]"
             : ""
         }`}
       >
@@ -98,10 +147,13 @@ function LinksGroup() {
 
       <Link
         to="/xizmat"
-        onClick={() => handleLinkClick("service")}
+        onClick={() => {
+          handleLinkClick("service");
+          close_func();
+        }}
         className={`text-[16px] py-[4px] px-[10px] ${
           activeLink.service
-            ? "rounded-[25px] border-b-[2px] border-[#6c2dba]"
+            ? "rounded-[25px] max-w-[140px] border-b-[2px] border-[#6c2dba]"
             : ""
         }`}
       >
@@ -110,10 +162,13 @@ function LinksGroup() {
 
       <Link
         to="/ishlar"
-        onClick={() => handleLinkClick("works")}
+        onClick={() => {
+          handleLinkClick("works");
+          close_func();
+        }}
         className={`text-[16px] py-[4px] px-[10px] ${
           activeLink.works
-            ? "rounded-[25px] border-b-[2px] border-[#6c2dba]"
+            ? "rounded-[25px] max-w-[140px] border-b-[2px] border-[#6c2dba]"
             : ""
         }`}
       >
@@ -122,19 +177,25 @@ function LinksGroup() {
 
       <Link
         to="/narxlar"
-        onClick={() => handleLinkClick("prices")}
+        onClick={() => {
+          handleLinkClick("prices");
+          close_func();
+        }}
         className={`text-[16px] py-[4px] px-[10px]  ${
           activeLink.prices
-            ? "rounded-[25px] border-b-[2px] border-[#6c2dba]"
+            ? "rounded-[25px] max-w-[85px] border-b-[2px] border-[#6c2dba]"
             : ""
         }`}
       >
         <TextTranslater txt="narxlar" />
       </Link>
-      <select className="appearance-none hover:bg-gray-700 shadow-white p-[8px] rounded-[10px] flex flex-col justify-center items-center " onChange={handleChange} >
-        <option value={"uz"} >Уз</option>
-        <option value={"ru"} >Py</option>
-        <option value={"en"} >Eng</option>
+      <select
+        className="appearance-none hover:bg-gray-700 shadow-white p-[8px] rounded-[10px] flex flex-col justify-center items-center "
+        onChange={handleChange}
+      >
+        <option value={"uz"}>Уз</option>
+        <option value={"ru"}>Py</option>
+        <option value={"en"}>Eng</option>
       </select>
     </>
   );
