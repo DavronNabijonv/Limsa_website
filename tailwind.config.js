@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       screen: {
-        'md9': '992px',
+        'nd': '1260px',
       },
     },
   },
