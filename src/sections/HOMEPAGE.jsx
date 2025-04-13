@@ -9,6 +9,7 @@ import computer from "../assets/main_komp.png";
 import left1 from "../assets/faq__img1.png";
 import left2 from "../assets/faq__img2.png";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+import Our_works from "./our_works";
 
 export default function HOMEPAGE() {
   return (
@@ -59,7 +60,7 @@ export default function HOMEPAGE() {
         </div>
       </Marquee>
 
-
+      <Our_works/>
 
     </div>
   );
