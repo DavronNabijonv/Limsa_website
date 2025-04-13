@@ -3,6 +3,7 @@ import "./App.css";
 import Navbar from "./sections/nav_contactFooter/navbar";
 import HOMEPAGE from "./sections/HOMEPAGE";
 import Our_works from "./sections/our_works";
+import Our_benefits from "./sections/our_benefits";
 
 function App() {
   const routes = [
@@ -14,7 +15,7 @@ function App() {
     {
       id: 2,
       path: "/xizmat",
-      element: <HOMEPAGE />,
+      element: <Our_benefits />,
     },
     {
       id: 3,
