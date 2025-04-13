@@ -19,6 +19,15 @@
   background-position: left center;
   background-size: cover;
 }
+
+/* contact -part background image */
+.contact-part{
+  background-image: url(./assets/formImg.png);
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: cover;
+  background-attachment: fixed ;
+}
 @media(max-width:1400px){
   .container{
     padding: 10px 20px ;

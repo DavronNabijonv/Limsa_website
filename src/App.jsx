@@ -1,9 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Navbar from "./sections/nav_contactFooter/navbar";
+import Navbar from "./sections/nav_foot/navbar";
 import HOMEPAGE from "./sections/HOMEPAGE";
 import Our_works from "./sections/our_works";
 import Our_benefits from "./sections/our_benefits";
+import Contact from "./sections/contact";
 
 function App() {
   const routes = [
@@ -39,6 +40,8 @@ function App() {
           <Route key={id} {...rest} />
         ))}
       </Routes>
+
+      <Contact/>
     </div>
   );
 }
