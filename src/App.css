@@ -3,17 +3,16 @@
     nega-biz-bg-color: #161616 ;
 */
 
-
 /* conatiner */
-.container{
+.container {
   max-width: 1400px;
   width: 100%;
   margin: 0 auto;
-  padding: 10px  0 ;
+  padding: 10px 0;
 }
 
 /* home page background image */
-.homepage{
+.homepage {
   background-image: url(./assets/main_bg.jpg);
   background-repeat: no-repeat;
   background-position: left center;
@@ -21,21 +20,46 @@
 }
 
 /* contact -part background image */
-.contact-part{
+.contact-part {
   background-image: url(./assets/formImg.png);
   background-repeat: no-repeat;
   background-position: top left;
   background-size: cover;
-  background-attachment: fixed ;
+  background-attachment: fixed;
 }
-@media(max-width:1400px){
-  .container{
-    padding: 10px 20px ;
+
+/* price section styles */
+.price-bg {
+  background-image: url(./assets/pricing-bg.png);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: cover;
+}
+.price-grp{
+  background-image: url(./assets/pricing-itembg.png);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: cover;
+  border:1px solid white;
+  border-radius: 10px;
+}
+.price-grp:hover{
+  border-color: #6c2dba;
+}
+.grp-left{
+  border-right: 1px solid white;
+}
+.price-grp:hover .grp-left{
+  border-color: #6c2dba;
+}
+@media (max-width: 1400px) {
+  .container {
+    padding: 10px 20px;
   }
 }
 
-@media(max-width:700px){
-  .homepage{
+@media (max-width: 700px) {
+  .homepage {
     background-position: left top;
   }
 }

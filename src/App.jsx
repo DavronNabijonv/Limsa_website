@@ -6,6 +6,7 @@ import Our_works from "./sections/our_works";
 import Our_benefits from "./sections/our_benefits";
 import Contact from "./sections/contact";
 import Footer from "./sections/nav_foot/footer";
+import Prices from "./sections/prices";
 
 function App() {
   const routes = [
@@ -27,7 +28,7 @@ function App() {
     {
       id: 4,
       path: "/narxlar",
-      element: <HOMEPAGE />,
+      element: <Prices />,
     },
   ];
 
