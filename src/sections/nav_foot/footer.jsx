@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import TextTranslater from "../../components/textTranslater";
 
 // icons and images
@@ -9,6 +9,7 @@ import { FaLinkedin, FaTelegramPlane } from "react-icons/fa";
 import footLogo from "../../assets/footer_logo.png";
 
 export default function Footer() {
+    const toTop = useCallback(()=>{ window.scrollTo(0, 0);},[])
   return (
     <div className="footer-part pt-[100px] ">
       <div className="container flex lg:flex-row flex-col lg:gap-[0px] gap-[50px] justify-between lg:items-start items-center ">
@@ -113,7 +114,7 @@ export default function Footer() {
 
       <div className="last-footer bg-[#0c0a0a] w-full py-[10px] ">
         <div className="container mt-[50px] flex justify-between items-center ">
-          <button  >
+          <button onClick={toTop} >
             <img
               src={footLogo}
               className=" w-[180px] "

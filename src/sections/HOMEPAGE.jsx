@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../App.css";
 import TextTranslater from "../components/textTranslater";
 import Btn from "../components/btn";
@@ -13,6 +13,7 @@ import Our_works from "./our_works";
 import Our_benefits from "./our_benefits";
 
 export default function HOMEPAGE() {
+  useEffect(()=>{ window.scrollTo(0, 0);},[])
   return (
     <div>
       <div className={`homepage  bg-cover md:py-[130px] py-[100px] `}>

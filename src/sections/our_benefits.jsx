@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../App.css';
 import TextTranslater from '../components/textTranslater';
 
 export default function Our_benefits({in_home=false}) {
+    useEffect(()=>{ in_home && window.scrollTo(0, 0);},[])
   return (
     <div className={`our-benefuts ${in_home?'mt-[50px] mb-[20px] ':'my-[100px]'} `} >
         {in_home?"":(<span><TextTranslater txt='xizmat' txt_styles={` mx-auto rounded-[25px] text-center w-[200px] text-white text-[18px] border-[1px] border-[#6c2dba] px-[20px] py-[10px] `} /></span>)};
