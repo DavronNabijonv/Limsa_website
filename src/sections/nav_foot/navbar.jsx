@@ -126,7 +126,9 @@ function LinksGroup({ close_func }) {
 
   // change language
   const { i18n } = useTranslation();
-  const handleChange = () => {};
+  const handleChange = (event) => {
+    i18n.changeLanguage(event.target.value);
+  };
 
   return (
     <>
