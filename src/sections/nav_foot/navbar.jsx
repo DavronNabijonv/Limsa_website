@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import "../../App.css";
 import TextTranslater from "../../components/textTranslater";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 // logo image
 import logo from "../../assets/limsa_logo.png";
@@ -60,8 +60,18 @@ export default function Navbar() {
         </div>
 
         {/* style navbar for phone */}
-        <div className={`lg:hidden flex flex-col gap-[15px] absolute duration-[0.4s] ${togle?"transform translate-x-[0%] z-[22222] ":"transform translate-x-[100%]"} top-[66px] bg-[#161616] right-0 w-[60%] p-[15px] `}>
-          <LinksGroup close_func={()=>{setTogle(false)}} />
+        <div
+          className={`lg:hidden flex flex-col gap-[15px] absolute duration-[0.4s] ${
+            togle
+              ? "transform translate-x-[0%] z-[22222] "
+              : "transform translate-x-[100%]"
+          } top-[66px] bg-[#161616] right-0 w-[60%] p-[15px] `}
+        >
+          <LinksGroup
+            close_func={() => {
+              setTogle(false);
+            }}
+          />
         </div>
 
         <div
@@ -88,7 +98,6 @@ export default function Navbar() {
             } m-[0.5rem] w-[1.5rem] h-[0.12rem] bg-[#6c2dba] duration-[0.4s]`}
           ></div>
         </div>
-
       </div>
 
       {/* overflow */}
@@ -99,30 +108,11 @@ export default function Navbar() {
         onClick={() => setTogle(false)}
       ></div>
       {/* overflow */}
-
     </div>
   );
 }
 
 function LinksGroup({ close_func }) {
-  // active links
-  const [activeLink, setActiveLink] = useState({
-    home: true,
-    service: false,
-    works: false,
-    prices: false,
-  });
-
-  // take active links
-  const handleLinkClick = (linkName) => {
-    setActiveLink({
-      home: false,
-      service: false,
-      works: false,
-      prices: false,
-      [linkName]: true,
-    });
-  };
 
   // change language
   const { i18n } = useTranslation();
@@ -132,65 +122,53 @@ function LinksGroup({ close_func }) {
 
   return (
     <>
-      <Link
+      <NavLink
         to="/"
-        onClick={() => {
-          close_func();
-          handleLinkClick("home");
-        }}
-        className={`text-[16px] py-[4px] px-[10px]  ${
-          activeLink.home
-            ? "rounded-[25px] border-b-[2px] max-w-[120px] border-[#6c2dba]"
-            : ""
-        }`}
+        onClick={close_func}
+        className={({ isActive }) =>
+          `text-[16px] py-[4px] px-[10px] ${
+            isActive ? "rounded-[25px] border-b-[2px] border-[#6c2dba]" : ""
+          }`
+        }
       >
         <TextTranslater txt="bosh_sahifa" />
-      </Link>
+      </NavLink>
 
-      <Link
+      <NavLink
         to="/xizmat"
-        onClick={() => {
-          handleLinkClick("service");
-          close_func();
-        }}
-        className={`text-[16px] py-[4px] px-[10px] ${
-          activeLink.service
-            ? "rounded-[25px] max-w-[140px] border-b-[2px] border-[#6c2dba]"
-            : ""
-        }`}
+        onClick={close_func}
+        className={({ isActive }) =>
+          `text-[16px] py-[4px] px-[10px] ${
+            isActive ? "rounded-[25px] border-b-[2px] border-[#6c2dba]" : ""
+          }`
+        }
       >
         <TextTranslater txt="xizmat" />
-      </Link>
+      </NavLink>
 
-      <Link
+      <NavLink
         to="/ishlar"
-        onClick={() => {
-          handleLinkClick("works");
-          close_func();
-        }}
-        className={`text-[16px] py-[4px] px-[10px] ${
-          activeLink.works
-            ? "rounded-[25px] max-w-[140px] border-b-[2px] border-[#6c2dba]"
-            : ""
-        }`}
+        onClick={close_func}
+        className={({ isActive }) =>
+          `text-[16px] py-[4px] px-[10px] ${
+            isActive ? "rounded-[25px] border-b-[2px] border-[#6c2dba]" : ""
+          }`
+        }
       >
         <TextTranslater txt="bizning-ishlar" />
-      </Link>
+      </NavLink>
 
-      <Link
+      <NavLink
         to="/narxlar"
-        onClick={() => {
-          handleLinkClick("prices");
-          close_func();
-        }}
-        className={`text-[16px] py-[4px] px-[10px]  ${
-          activeLink.prices
-            ? "rounded-[25px] max-w-[85px] border-b-[2px] border-[#6c2dba]"
-            : ""
-        }`}
+        onClick={close_func}
+        className={({ isActive }) =>
+          `text-[16px] py-[4px] px-[10px] ${
+            isActive ? "rounded-[25px] border-b-[2px] border-[#6c2dba]" : ""
+          }`
+        }
       >
         <TextTranslater txt="narxlar" />
-      </Link>
+      </NavLink>
       <select
         className="appearance-none hover:bg-gray-700 shadow-white p-[8px] rounded-[10px] flex flex-col justify-center items-center "
         onChange={handleChange}
