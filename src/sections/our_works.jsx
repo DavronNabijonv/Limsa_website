@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../App.css";
 
 // images
@@ -13,6 +13,7 @@ import zamon from "../assets/work_zamonTour.jpg";
 import TextTranslater from "../components/textTranslater";
 
 export default function Our_works() {
+  useEffect(()=>{ window.scrollTo(0, 0);},[])
   return (
     <div data-aos="fade-up">
       <div className="our-works my-[100px] ">

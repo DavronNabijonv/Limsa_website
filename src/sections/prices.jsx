@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../App.css";
 import TextTranslater from "../components/textTranslater";
 
@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import Btn from "../components/btn";
 
 export default function Prices() {
+  useEffect(()=>{ window.scrollTo(0, 0);},[])
   return (
     <div className="prices xl:mt-[180px] mt-[100px] ">
       <TextTranslater
