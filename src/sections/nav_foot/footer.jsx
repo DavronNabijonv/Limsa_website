@@ -113,7 +113,7 @@ export default function Footer() {
       </div>
 
       <div className="last-footer bg-[#0c0a0a] w-full py-[10px] ">
-        <div className="container mt-[50px] flex justify-between items-center ">
+        <div className="container mt-[50px] flex sm:gap-[0px] gap-[15px] justify-between items-center ">
           <button onClick={toTop} >
             <img
               src={footLogo}
@@ -122,7 +122,7 @@ export default function Footer() {
               alt="footer logo image"
             />
           </button>
-          <TextTranslater txt="huquq" txt_styles=" text-white " />
+          <TextTranslater txt="huquq" txt_styles=" text-white max-sm:text-[14px] max-sm:leading-[20px] " />
         </div>
       </div>
     </div>
