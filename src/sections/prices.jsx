@@ -9,7 +9,7 @@ import Btn from "../components/btn";
 
 export default function Prices() {
   return (
-    <div className="prices mt-[180px] ">
+    <div className="prices xl:mt-[180px] mt-[100px] ">
       <TextTranslater
         txt="narxlar-page-title-btn"
         txt_styles={` mx-auto rounded-[25px] text-center w-[200px] text-white text-[18px] border-[1px] border-[#6c2dba] px-[20px] py-[10px] `}
@@ -18,14 +18,14 @@ export default function Prices() {
       <div className="price-bg">
         <TextTranslater
           txt="narxlar-page-title"
-          txt_styles=" text-center w-full text-white my-[50px] text-[40px] font-[600] "
+          txt_styles=" text-center w-full text-white my-[50px] sm:text-[40px] text-[25px] font-[600] "
         />
 
         <div className="container flex flex-col gap-[5px] ">
 
-          <div className="price-grp flex ">
+          <div className="price-grp flex lg:flex-row flex-col ">
 
-            <div className="grp-left p-[30px] w-[400px] ">
+            <div className="grp-left p-[30px] lg:w-[400px] w-full ">
               <TextTranslater
                 txt="boshlangich-title"
                 txt_styles={" text-[#6c2dba] text-[25px] font-[600] mb-[20px] "}
@@ -36,7 +36,7 @@ export default function Prices() {
               />
             </div>
 
-            <div className="grp-right max-w-[950px] w-full pl-[200px] flex justify-between items-center ">
+            <div className="grp-right max-w-[950px] w-full xl:pl-[200px] pl-[30px] xl:pr-[10px] px-[20px] lg:pb-[0px] pb-[10px] flex lg:flex-row flex-col justify-between lg:items-center items-start ">
 
               <div className="features flex flex-col gap-[5px] text-gray-400 ">
                 <div className="f-items flex items-center gap-[5px] text-[13px] ">
@@ -65,7 +65,7 @@ export default function Prices() {
                 </div>
               </div>
 
-              <div className="btn-grp flex gap-[18px] ">
+              <div className="btn-grp flex lg:flex-row flex-col gap-[18px] ">
                 <TextTranslater txt="kelishish" txt_styles=' text-[#6d2dbc] text-[20px] font-[600] ' />
                 <Link>
                   <Btn txt="buyurtma-berish-btn" btn_styles=' w-[200px] rounded-[5px] text-[17px] py-[4px] font-[600] ' />
@@ -76,9 +76,9 @@ export default function Prices() {
 
           </div>
 
-          <div className="price-grp flex ">
+          <div className="price-grp flex lg:flex-row flex-col ">
 
-            <div className="grp-left p-[30px] w-[400px] ">
+            <div className="grp-left p-[30px] lg:w-[400px] w-full ">
               <TextTranslater
                 txt="boshlangich-title"
                 txt_styles={" text-[#6c2dba] text-[25px] font-[600] mb-[20px] "}
@@ -89,7 +89,7 @@ export default function Prices() {
               />
             </div>
 
-            <div className="grp-right max-w-[950px] w-full pl-[200px] flex justify-between items-center ">
+            <div className="grp-right max-w-[950px] w-full xl:pl-[200px] pl-[30px] xl:pr-[10px] px-[20px] lg:pb-[0px] pb-[10px] flex lg:flex-row flex-col justify-between lg:items-center items-start ">
 
               <div className="features flex flex-col gap-[5px] text-gray-400 ">
                 <div className="f-items flex items-center gap-[5px] text-[13px] ">
@@ -118,7 +118,7 @@ export default function Prices() {
                 </div>
               </div>
 
-              <div className="btn-grp flex gap-[18px] ">
+              <div className="btn-grp flex lg:flex-row flex-col gap-[18px] ">
                 <TextTranslater txt="kelishish" txt_styles=' text-[#6d2dbc] text-[20px] font-[600] ' />
                 <Link>
                   <Btn txt="buyurtma-berish-btn" btn_styles=' w-[200px] rounded-[5px] text-[17px] py-[4px] font-[600] ' />
@@ -129,9 +129,9 @@ export default function Prices() {
 
           </div>
 
-          <div className="price-grp flex ">
+          <div className="price-grp flex lg:flex-row flex-col ">
 
-            <div className="grp-left p-[30px] w-[400px] ">
+            <div className="grp-left p-[30px] lg:w-[400px] w-full ">
               <TextTranslater
                 txt="boshlangich-title"
                 txt_styles={" text-[#6c2dba] text-[25px] font-[600] mb-[20px] "}
@@ -142,7 +142,7 @@ export default function Prices() {
               />
             </div>
 
-            <div className="grp-right max-w-[950px] w-full pl-[200px] flex justify-between items-center ">
+            <div className="grp-right max-w-[950px] w-full xl:pl-[200px] pl-[30px] xl:pr-[10px] px-[20px] lg:pb-[0px] pb-[10px] flex lg:flex-row flex-col justify-between lg:items-center items-start ">
 
               <div className="features flex flex-col gap-[5px] text-gray-400 ">
                 <div className="f-items flex items-center gap-[5px] text-[13px] ">
@@ -171,7 +171,7 @@ export default function Prices() {
                 </div>
               </div>
 
-              <div className="btn-grp flex gap-[18px] ">
+              <div className="btn-grp flex lg:flex-row flex-col gap-[18px] ">
                 <TextTranslater txt="kelishish" txt_styles=' text-[#6d2dbc] text-[20px] font-[600] ' />
                 <Link>
                   <Btn txt="buyurtma-berish-btn" btn_styles=' w-[200px] rounded-[5px] text-[17px] py-[4px] font-[600] ' />

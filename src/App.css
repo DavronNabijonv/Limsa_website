@@ -58,6 +58,12 @@
   }
 }
 
+@media(max-width:1024px){
+  .grp-left{
+    border-right:none;
+  }
+}
+
 @media (max-width: 700px) {
   .homepage {
     background-position: left top;

@@ -19,7 +19,7 @@ export default function HOMEPAGE() {
       <div className={`homepage  bg-cover md:py-[130px] py-[100px] `}>
         <div className="container flex sm:flex-row flex-col  gap-[20px] justify-between items-center ">
           <div data-aos="fade-down">
-            <div className="home-left text-white flex flex-col sm:items-start items-center gap-[15px] md9:max-w-[500px] w-[100%] ">
+            <div className="home-left text-white flex flex-col sm:items-start items-center gap-[15px] max-w-[500px] w-[100%] ">
               <TextTranslater
                 txt="home-title"
                 txt_styles="  font-[600] md:leading-[39px] leading-[26px] md:text-[30px] text-[22px] sm:text-left text-center "
