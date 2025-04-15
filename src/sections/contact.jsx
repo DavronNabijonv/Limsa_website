@@ -4,6 +4,8 @@ import TextTranslater from '../components/textTranslater';
 import { useTranslation } from 'react-i18next';
 import axios from "axios";
 import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Contact() {
 
@@ -24,10 +26,15 @@ export default function Contact() {
       text: info_user
     })
     .then(() => {
-      alert("Muvaffaqiyatli yuborildi!!!");
+      toast.success("Successfull!", {
+        position: "top-right"
+      });
       event.target.reset(); 
     })
     .catch((error) => {
+      toast.error("Error.", {
+        position: "top-right"
+      });
       console.error("Yuborishda xatolik:", error);
     });
   };
@@ -75,6 +82,8 @@ export default function Contact() {
                 />
               </form>
             </div>
+
+            <ToastContainer/>
 
         </div>
     </div>
