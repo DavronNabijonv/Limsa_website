@@ -65,7 +65,7 @@ export default function Navbar() {
             togle
               ? "transform translate-x-[0%] z-[22222] "
               : "transform translate-x-[100%]"
-          } top-[66px] bg-[#161616] right-0 w-[60%] p-[15px] `}
+          } top-[66px] bg-[#161616] right-0 w-[60%] h-[100vh] p-[15px] `}
         >
           <LinksGroup
             close_func={() => {
@@ -104,7 +104,7 @@ export default function Navbar() {
       <div
         className={`absolute ${
           togle ? "flex" : "hidden"
-        } w-[100%] h-[100%] top-0 bottom-0 left-0 `}
+        } w-[100%] h-[100vh] z-[999] top-0 bottom-0 left-0 `}
         onClick={() => setTogle(false)}
       ></div>
       {/* overflow */}
