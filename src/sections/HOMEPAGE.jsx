@@ -13,7 +13,9 @@ import Our_works from "./our_works";
 import Our_benefits from "./our_benefits";
 
 export default function HOMEPAGE() {
-  useEffect(()=>{ window.scrollTo(0, 0);},[])
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <div className={`homepage  bg-cover md:py-[130px] py-[100px] `}>
@@ -49,23 +51,25 @@ export default function HOMEPAGE() {
       {/* FAQ section */}
       <Faq />
 
-      <Marquee gradient={false} speed={100} className="flex gap-[50px] items-center " >
+      <Marquee
+        gradient={false}
+        speed={100}
+        className="flex gap-[50px] items-center "
+      >
         <div className="flex gap-[50px] mb-[30px] items-center ">
           <TextTranslater txt="scroll1" txt_styles=" text-white text-[25px] " />
-          <p className="text-white text-[18px]" >/</p>
+          <p className="text-white text-[18px]">/</p>
           <TextTranslater txt="scroll2" txt_styles=" text-white text-[25px] " />
-          <p className="text-white text-[18px]" >/</p>
+          <p className="text-white text-[18px]">/</p>
           <TextTranslater txt="scroll3" txt_styles=" text-white text-[25px] " />
-          <p className="text-white text-[18px]" >/</p>
+          <p className="text-white text-[18px]">/</p>
           <TextTranslater txt="scroll4" txt_styles=" text-white text-[25px] " />
-          
         </div>
       </Marquee>
 
-      <Our_works/>
+      <Our_works />
 
       <Our_benefits in_home={true} />
-
     </div>
   );
 }
@@ -104,7 +108,8 @@ function Faq() {
                 setFaq2(false);
                 setFaq3(false);
               }}
-              className={` faq-questions  flex flex-col gap-[20px] border-[1px] border-gray-600 rounded-[20px] px-[15px]  transition-all duration-[0.2s] `}
+              className={` faq-questions  flex flex-col gap-[20px] border-[1px] border-gray-600 rounded-[20px] px-[15px]  transition-all duration-[0.2s] 
+                ${faq1?'max-sm:h-[250px] ':''}`}
             >
               <div
                 className={` question ${
@@ -142,7 +147,8 @@ function Faq() {
                 setFaq1(false);
                 setFaq3(false);
               }}
-              className={` faq-questions  flex flex-col gap-[20px] border-[1px] border-gray-600 rounded-[20px] px-[15px]  transition-all duration-[0.2s] `}
+              className={` faq-questions  flex flex-col gap-[20px] border-[1px] border-gray-600 rounded-[20px] px-[15px]  transition-all duration-[0.2s]
+                ${faq2?'max-sm:h-[260px] ':''} `}
             >
               <div
                 className={` question ${
@@ -180,7 +186,8 @@ function Faq() {
                 setFaq2(false);
                 setFaq1(false);
               }}
-              className={` faq-questions  flex flex-col gap-[20px] border-[1px] border-gray-600 rounded-[20px] px-[15px]  transition-all duration-[0.2s] `}
+              className={` faq-questions  flex flex-col gap-[20px] border-[1px] border-gray-600 rounded-[20px] px-[15px]  transition-all duration-[0.2s] 
+                ${faq3?'max-sm:h-[260px] ':''}`}
             >
               <div
                 className={` question ${

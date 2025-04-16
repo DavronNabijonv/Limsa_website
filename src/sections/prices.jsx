@@ -19,7 +19,7 @@ export default function Prices() {
       <div className="price-bg">
         <TextTranslater
           txt="narxlar-page-title"
-          txt_styles=" text-center w-full text-white my-[50px] sm:text-[40px] text-[25px] font-[600] "
+          txt_styles=" text-center w-full text-white my-[50px] sm:text-[40px] text-[23px] font-[600] max-sm:px-[5px] "
         />
 
         <div className="container flex flex-col gap-[5px] ">
